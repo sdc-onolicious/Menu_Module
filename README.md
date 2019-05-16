@@ -3,8 +3,7 @@
 <<<<<<< HEAD
 > FEC based on the website OpenTable
 =======
-> FEC based on the website OpenTable.
->>>>>>> new-files-and-package.json-update
+
 
 ## Related Projects
 
@@ -31,7 +30,7 @@
 An `nvmrc` file is included if using [nvm](https://github.com/creationix/nvm).
 
 - Node 6.13.0
-- etc
+- mySQL
 
 ## Development
 
