@@ -1,6 +1,10 @@
 # FEC
 
+<<<<<<< HEAD
 > FEC based on the website OpenTable
+=======
+> FEC based on the website OpenTable.
+>>>>>>> new-files-and-package.json-update
 
 ## Related Projects
 
@@ -18,6 +22,9 @@
 ## Usage
 
 > Some usage instructions
+> Run Scripts
+>> $ npm run react-dev
+>> $ npm run server-dev
 
 ## Requirements
 
