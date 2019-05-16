@@ -22,3 +22,5 @@ CREATE TABLE menu_items (
   PRIMARY KEY (id)
 );
 
+INSERT INTO menu (main_description, single_menu_item, price_per_guest) VALUES ('Test D', 'Test menu', 100);
+INSERT INTO menu_items (item_name, item_description, menu_item_id) VALUES ('little Test D', 'little Test menu', 1);
