@@ -8,10 +8,15 @@
     "node": ">=6.13.0"
   },
   "scripts": {
+    "react-dev": "webpack -d --watch",
+    "start": "nodemon server/index.js"
   },
   "dependencies": {
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6"
   },
   "devDependencies": {
-    "eslint-config-hackreactor": "git://github.com/reactorcore/eslint-config-hackreactor"
+    "eslint-config-hackreactor": "git://github.com/reactorcore/eslint-config-hackreactor",
+    "webpack": "^4.31.0"
   }
 }
