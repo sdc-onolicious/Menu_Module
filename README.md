@@ -1,13 +1,13 @@
-# Project Name
+# FEC
 
-> Project description
+> FEC based on the website OpenTable
 
 ## Related Projects
 
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
+  - https://github.com/freeseats/exzerone-search-bar
+  - https://github.com/freeseats/matthewjdiaz1-photo-service
+  - https://github.com/freeseats/slhodak-fec
+  - https://github.com/freeseats/wfong-service-reservations
 
 ## Table of Contents
 
