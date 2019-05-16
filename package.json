@@ -1,6 +1,6 @@
 {
-  "name": "",
-  "version": "",
+  "name": "jackie-fec-project",
+  "version": "1.0.0",
   "description": "",
   "author": "",
   "license": "",
@@ -9,14 +9,22 @@
   },
   "scripts": {
     "react-dev": "webpack -d --watch",
-    "start": "nodemon server/index.js"
+    "server-dev": "nodemon server/index.js"
   },
   "dependencies": {
+    "body-parser": "^1.19.0",
+    "faker": "^4.1.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6"
   },
   "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-loader": "^6.4.1",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.23.0",
     "eslint-config-hackreactor": "git://github.com/reactorcore/eslint-config-hackreactor",
-    "webpack": "^4.31.0"
+    "jest": "^24.8.0",
+    "mysql": "^2.16.0",
+    "webpack": "^2.2.1"
   }
 }
