@@ -21,9 +21,19 @@
 ## Usage
 
 > Some usage instructions
+> $ npm install
 > Run Scripts
 >> $ npm run react-dev
 >> $ npm run server-dev
+
+> Change db connection
+>> user, and password if you have one
+
+> For mySQL
+>> Run command mysql -u root -p < schema.sql to create Database and tables
+>> Run command mysql -u root -p to log into mysql
+>> USE complete_menu database
+>> Run command SELECT * FROM menu INNER JOIN menu_items ON menu.id
 
 ## Requirements
 
