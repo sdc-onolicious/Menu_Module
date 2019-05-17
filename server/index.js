@@ -1,3 +1,5 @@
+let faker = require('faker');
+
 const express = require('express');
 
 let app = express();
@@ -10,14 +12,14 @@ const db = require('../db/index.js');
 // Create GET route
 app.get('/menu', function(req, res) {
   // This route should send back all the menu items
-  console.log('Get Route Works!');
+  console.log('GET Route Works!');
   db.getAll(res);
 });
 
 // Create POST route
 // Include Faker data for the posts
 app.post('/menu',function(req, res) {
-  
+  console.log('POST Route Works!')
 });
 
 
