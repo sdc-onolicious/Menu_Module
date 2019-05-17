@@ -26,7 +26,6 @@ const getAll = function(res) {
   connection.end();
 };
 
-// Insert faker data with server post request
 
 // export functions to be used elsewhere
 module.exports = {

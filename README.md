@@ -21,7 +21,7 @@
 ## Usage
 
 > Some usage instructions
-
+> $ npm install
 > Run Scripts
 >> $ npm run react-dev
 >> $ npm run server-dev

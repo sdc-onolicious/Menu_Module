@@ -5,23 +5,135 @@ CREATE DATABASE complete_menu;
 
 USE complete_menu;
 
-CREATE TABLE menu (
-  id INT NOT NULL AUTO_INCREMENT,
-  main_description VARCHAR(255),
-  single_menu VARCHAR(255),
-  price_per_guest INT,
-  PRIMARY KEY (id)
-);
+DROP TABLE IF EXISTS `menu`;
+CREATE TABLE `menu` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `main_description` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `single_menu` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `price_per_guest` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
-CREATE TABLE menu_items (
-  id INT NOT NULL AUTO_INCREMENT,
-  dish_name VARCHAR(255),
-  dish_description VARCHAR(255),
-  single_menu_id INT,
-  FOREIGN KEY (single_menu_id) REFERENCES menu (id),
-  PRIMARY KEY (id)
-);
 
-INSERT INTO menu (main_description, single_menu, price_per_guest) VALUES ('Test D', 'Test menu', 100);
-INSERT INTO menu_items (dish_name, dish_description, single_menu_id) VALUES ('little Test D', 'little Test menu', 1);
-INSERT INTO menu_items (dish_name, dish_description, single_menu_id) VALUES ('little Test Deee', 'little Test menu', 1);
+DROP TABLE IF EXISTS `menu_items`;
+CREATE TABLE `menu_items` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `dish_name` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `dish_description` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `single_menu_id` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `single_menu_id` (`single_menu_id`),
+  CONSTRAINT `menu_items_ibfk_1` FOREIGN KEY (`single_menu_id`) REFERENCES `menu` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=101 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+
+-- INSERT INTO menu (main_description, single_menu, price_per_guest) VALUES ('Test D', 'Test menu', 100);
+-- INSERT INTO menu_items (dish_name, dish_description, single_menu_id) VALUES ('little Test D', 'little Test menu', 1);
+-- INSERT INTO menu_items (dish_name, dish_description, single_menu_id) VALUES ('little Test Deee', 'little Test menu', 1);
+
+INSERT INTO `menu` VALUES ('1','Consectetur id magni error tempore minus. Beatae exercitationem neque harum in explicabo alias cum. Qui omnis aperiam ut eius excepturi.','voluptatem','14992'),
+('2','Qui laborum sit in. Minus et corporis nihil nesciunt aut repellat voluptatem est. Suscipit ratione qui sed ea enim consequatur. Aliquam blanditiis ullam sunt. Officia at aliquam accusamus magni laboriosam.','labore','157541'),
+('3','Quia eius nobis aut sed voluptatibus magni consequuntur voluptate. Quaerat et praesentium consequatur ea ab odio. Voluptatem saepe qui et cum est quia praesentium. Est dolor quos minima eius dolorum.','sunt','43'),
+('4','Molestias quia expedita dolor magni. Dolores nihil itaque magnam perspiciatis ducimus hic. Sit accusamus rem nam et.','perspiciatis','64'),
+('5','Dolores fugit possimus quis ut eaque quidem fugiat ullam. Autem qui omnis natus sed doloribus id. Nihil iure fugiat pariatur et.','et','27218755'); 
+
+INSERT INTO `menu_items` VALUES ('1','consequatur','Quasi rem quisquam nostrum vel. Dignissimos natus eum dolorem quae quis dolor. Dolores in in doloribus. Cumque quod consequuntur consequatur ea ipsa et.','1'),
+('2','sunt','Magnam ut impedit ea sapiente cumque. Voluptatem temporibus voluptatem doloremque. Fuga ex odio libero ratione eius. Ea rerum alias dolores architecto quasi necessitatibus tenetur.','2'),
+('3','dolores','Voluptatum et odio amet possimus libero. Eum quisquam at laboriosam illum qui est est. Consequatur animi fugiat sed vel.','3'),
+('4','et','Magni est similique ea aut exercitationem iste. Consequatur quia et enim iste impedit. Necessitatibus eveniet repudiandae suscipit vitae. Minima eos odit voluptatum qui quis magnam. Ipsam quasi consequatur quas tempore eum.','4'),
+('5','consequatur','Dolores dicta beatae ipsum aliquam. Et et sint doloribus amet vel est illo. Nostrum nostrum rerum consequatur qui reiciendis quae.','5'),
+('6','soluta','Et quis eveniet incidunt quia fuga qui et. Aut veniam sed unde aut autem iusto nostrum.','1'),
+('7','qui','Voluptatibus praesentium hic repudiandae nostrum consequatur odio. Adipisci tenetur ipsam debitis voluptatem ab quia rerum. Laborum et unde ut quia est repellat. Voluptatibus nihil ipsum molestiae ex alias eligendi.','2'),
+('8','saepe','Aut molestiae nihil labore odio facere reprehenderit ad. A doloribus ea natus maiores. Dolorem sequi ut dignissimos praesentium totam ipsam. Beatae molestiae sed sit voluptatem quibusdam et eligendi. Cupiditate minima odit nihil doloremque id.','3'),
+('9','rerum','Error asperiores qui quibusdam nobis debitis architecto in. Aut in molestias officia nostrum. Odio ipsam totam hic voluptatem.','4'),
+('10','ut','Voluptatum corrupti consectetur possimus optio aspernatur ipsam aut. Recusandae quo officia debitis ea aspernatur soluta. Aliquam voluptates ut similique quibusdam non.','5'),
+('11','ducimus','Tempore ipsa assumenda quo. Qui doloribus id consequatur aliquid. Beatae impedit vitae cupiditate quibusdam debitis.','1'),
+('12','et','Voluptatem vel non consequatur ratione. Est et itaque a nesciunt. Distinctio vel itaque velit quae illum consequuntur voluptatem. Animi doloremque dolorem dignissimos aspernatur voluptatem. Rerum ea et nostrum id vel fugit.','2'),
+('13','maxime','Cumque dolores sapiente veniam eveniet deserunt. Eligendi delectus id debitis placeat dolore debitis voluptatem. Qui praesentium voluptatem qui voluptates repellat laudantium. Eos dolor deleniti in qui ea sit eum.','3'),
+('14','voluptas','Veritatis quis aut expedita odit quis odit sint voluptas. Et asperiores error sit ut omnis labore qui. Voluptatum vel inventore dignissimos magnam distinctio fuga perspiciatis. Qui quidem temporibus dicta quasi itaque architecto et. Voluptas repudiandae s','4'),
+('15','molestiae','Quasi atque reiciendis consequatur autem ab. Molestiae tempore similique placeat velit. Eum deserunt ut deserunt enim laudantium. Ipsa numquam deserunt consequatur nostrum minima.','5'),
+('16','atque','Nisi autem non explicabo sint corporis mollitia eveniet commodi. Quis eius non neque. Possimus nostrum optio iusto error accusantium est nihil. Beatae molestiae aut aut blanditiis quis ex culpa ducimus.','1'),
+('17','eius','Mollitia dicta omnis est est quod asperiores. Voluptates veniam eum non. Quis possimus et quibusdam ipsa.','2'),
+('18','iure','Quos accusamus quaerat earum quasi deserunt. Nobis sunt fuga asperiores unde nostrum inventore. Velit qui officia vitae in. Ullam dicta nihil libero exercitationem.','3'),
+('19','quia','Et qui accusamus occaecati cum non tempore vitae. Incidunt amet incidunt debitis dolor fugit nam ad.','4'),
+('20','cumque','Enim numquam minus facilis quis et enim nisi. Provident quam ducimus explicabo voluptas impedit quidem. Vero minima aut mollitia tempore deleniti quae. Corrupti ut beatae velit deserunt dolorum consequatur voluptatibus.','5'),
+('21','blanditiis','Dolorem exercitationem qui est. Amet porro neque esse voluptatem nisi. Rerum et minima dolores sit.','1'),
+('22','quisquam','Voluptas maiores nobis facilis reiciendis officiis sint officiis. Et quisquam sint minima eius minus aliquam. Et voluptas tenetur ducimus voluptatibus quia placeat.','2'),
+('23','perspiciatis','Ut dolor dolor vel corrupti qui neque. Consequatur et id et nostrum eius.','3'),
+('24','quos','Occaecati minima fugiat odit reprehenderit doloribus. Maxime tempore rerum voluptatem omnis. Est quos natus qui quaerat neque.','4'),
+('25','nam','Quo non eos cupiditate mollitia. Ipsam voluptatibus deserunt qui perferendis molestias.','5'),
+('26','assumenda','Rerum quas soluta maxime ullam facilis nulla. Est aut voluptas debitis possimus et et eaque. Qui sint corrupti fugit.','1'),
+('27','labore','Nostrum amet doloremque repudiandae tempora similique voluptas. Delectus iste qui neque quis. Repellendus et odio sit. Dolorem officia qui quis excepturi alias tempore.','2'),
+('28','vel','Veniam reiciendis maxime dolores assumenda. Rerum corporis dolores nihil. Corrupti est ea est sed nemo et. Nihil sint similique iure non quia sunt.','3'),
+('29','iste','Quisquam quis nostrum quia. Impedit voluptatum ut sapiente maxime enim enim. Saepe incidunt dolor omnis et dicta porro. Fugit voluptas placeat sapiente ut nam voluptas aut nobis.','4'),
+('30','ab','Perspiciatis pariatur sunt magni aliquid voluptas soluta. Necessitatibus eveniet necessitatibus alias est ea quis doloribus quas.','5'),
+('31','consectetur','Nam vitae ut optio vero maiores. Ab eum non culpa dolorem provident. Esse esse labore ut magni et. Odit incidunt itaque iusto.','1'),
+('32','enim','Sit eum aut vel aspernatur labore rerum facilis. Consequatur dolores aut qui odio velit ut rerum ut.','2'),
+('33','voluptatibus','Ab sunt soluta incidunt non omnis repellat. Aliquam modi asperiores minima omnis. Explicabo necessitatibus iste vitae labore consequatur ipsa eum quod. Non voluptates facilis quo accusantium dolor perspiciatis.','3'),
+('34','minima','Mollitia qui ullam tempore ea voluptatem architecto voluptatem error. Ut dolor magni eos alias sint nihil. Voluptatem voluptatem soluta pariatur quasi.','4'),
+('35','veniam','Laborum est iure animi corporis. In tempore deserunt et fugit. Fugit quia voluptatum velit excepturi est.','5'),
+('36','quia','Sequi modi earum sint corrupti dignissimos et. Quia aut quaerat omnis id ducimus ullam. Officia alias repellat impedit asperiores.','1'),
+('37','pariatur','Quia qui sint modi fugit inventore nobis temporibus. Est iure ut veniam. Eius similique et maiores sed totam sit provident.','2'),
+('38','consequatur','Ut aliquam velit suscipit porro itaque ea sunt saepe. Eum provident incidunt et consequatur ratione. Ex atque placeat autem.','3'),
+('39','distinctio','Maiores soluta libero tenetur ullam adipisci officia laboriosam. Maxime et minima nam consequuntur vel sequi dignissimos aut. Dignissimos necessitatibus necessitatibus est fugit unde. Maxime consequatur amet facere sint ipsa quis. Eum non inventore necess','4'),
+('40','qui','Neque et asperiores at laudantium. Incidunt natus voluptatem consequatur aut.','5'),
+('41','ea','Consequatur culpa minima vero et neque earum. Dicta accusantium mollitia suscipit. Est cum repellat aliquid vitae temporibus unde.','1'),
+('42','iusto','Facere iusto qui iure quas id impedit. Labore autem esse voluptatibus eos explicabo facilis suscipit. Dolorem dolor hic alias laudantium perspiciatis officia dolorem. Aut voluptatibus consequatur incidunt nobis iste est dolores.','2'),
+('43','dolor','Mollitia soluta et nesciunt saepe deleniti voluptatem sequi. Quia voluptas adipisci voluptas non sint. Sit quam sapiente laudantium qui vel rerum. Id suscipit accusamus et corrupti adipisci expedita.','3'),
+('44','eaque','Dolores autem et delectus qui unde esse molestias. Consequuntur vero rem temporibus voluptates sed suscipit. Unde sint et dolores autem velit distinctio minus. Neque ea aliquam quis exercitationem sequi.','4'),
+('45','tempora','Ut harum explicabo eius quia ut. Quia eos voluptas ipsum totam similique. Eos ut ut et ea neque incidunt rerum. Soluta porro saepe quidem officiis.','5'),
+('46','rerum','Minima sed ducimus animi rerum. Ut similique soluta aut hic. Temporibus velit quia perspiciatis dolore et.','1'),
+('47','aperiam','Est maiores id quo qui voluptates nemo similique. Fugit iste inventore est a dignissimos molestiae. Est labore et eos veritatis repudiandae rerum voluptas.','2'),
+('48','repudiandae','Totam pariatur cum voluptas et cum ab. Et et aperiam illum in est et officia. Voluptatem ut repudiandae eos qui dolores tempora iusto sint. Aliquam in consequatur hic dolorem cum harum amet.','3'),
+('49','nihil','Sequi iste nemo est id hic enim eos dolor. Nihil possimus excepturi voluptatum. Aperiam qui corrupti sit non tempora. Vero est odio vero sequi consectetur rem.','4'),
+('50','illum','Odio iusto et magnam sit. Iusto et eaque eveniet illum.','5'),
+('51','atque','Dignissimos debitis enim dolorem. Rerum et adipisci doloribus voluptatem. Impedit rem necessitatibus voluptatem tempore ea.','1'),
+('52','modi','Pariatur vel facilis molestias quasi nesciunt cumque. Sunt est aspernatur in voluptatum est. Ut quia rem voluptate eveniet et rem. Qui voluptates ullam illum doloremque dolorum deserunt.','2'),
+('53','aperiam','Laboriosam et in eveniet ipsam. Vitae voluptates voluptatem sunt sunt rerum. Assumenda ex nisi sequi.','3'),
+('54','dolore','Est aliquam eligendi quo et sed. Vitae fuga dolorum deleniti eum fugiat hic eos. Consequatur dolorem ipsam doloribus aut aspernatur voluptas voluptas placeat.','4'),
+('55','eum','Consequuntur iure eos et repudiandae asperiores autem in. Voluptatum consequatur nemo recusandae eum fugit asperiores doloribus. Omnis corporis nemo neque et quae vitae facere.','5'),
+('56','repellendus','Error distinctio dolorem et distinctio doloremque est. Dolore repellat voluptas illum dignissimos dicta quis sed voluptatum. Voluptatem illum delectus alias est velit excepturi totam et. Hic officia saepe dolore perspiciatis molestiae sed.','1'),
+('57','vitae','Soluta sit recusandae illum ut optio aliquam et. Facere vel omnis quod exercitationem aut vel voluptatum. Aliquam dolores autem quis at ut quia voluptatem et. Sunt at tenetur rem sed porro.','2'),
+('58','ut','Enim id ad nobis reprehenderit corrupti. Nesciunt eius nihil animi. Cumque et exercitationem id sunt.','3'),
+('59','et','Unde ut dolor quia inventore autem. Perspiciatis placeat voluptate nobis reprehenderit voluptatem asperiores. Excepturi magnam recusandae quo quia.','4'),
+('60','rerum','Ex tempore animi error aspernatur eos voluptatem. Veniam fuga mollitia velit doloribus dolorem dolore. Ratione aperiam et dicta corrupti amet voluptas. Quas consectetur non repudiandae quae.','5'),
+('61','officiis','Quo exercitationem earum quae sed quia impedit molestias. Adipisci placeat praesentium nulla ipsa molestias velit non. Sunt vel maxime voluptatem aut. Eius quo quia rerum et officiis veritatis itaque.','1'),
+('62','ab','Quibusdam libero quam id earum ab. Non rerum amet amet sit. Vel culpa natus enim expedita sed.','2'),
+('63','sit','Tenetur et fugiat aut vitae vel accusantium necessitatibus maxime. Iusto aspernatur inventore facilis incidunt dignissimos. A sit sed eos qui laborum perspiciatis rerum. Et facere non nihil ipsum rerum et.','3'),
+('64','dicta','Ad maxime provident eligendi. Eum magnam tempora corporis repellat dolor est suscipit.','4'),
+('65','quia','Corrupti est alias dolor accusamus accusamus ut. Quisquam et exercitationem repellendus. Velit nobis qui suscipit hic omnis.','5'),
+('66','in','Rerum facilis earum soluta quasi. Ducimus sed magni qui et quod ab. Ipsam qui illo libero necessitatibus deleniti quos quo. Corrupti nihil voluptatem sit consequatur ut.','1'),
+('67','sapiente','Et assumenda iure rerum sunt doloribus aliquid. Labore ut ut atque. Perferendis quisquam recusandae eum vitae autem inventore libero. Voluptatem facilis natus maxime cum tempora.','2'),
+('68','consectetur','Omnis omnis nihil blanditiis assumenda qui porro. Sit qui maiores quisquam maiores nobis cupiditate corrupti. Ipsam dicta ut et et consequatur officiis aut. Qui quo doloremque ipsum qui.','3'),
+('69','exercitationem','Voluptates aut ratione explicabo. Dolor quas impedit voluptatem aut dignissimos. Saepe nam velit aut dolor. Ut illo nihil eligendi at numquam ullam dolorem.','4'),
+('70','officia','Quia quibusdam rerum enim nemo tempora a dignissimos ullam. Quod facilis nihil labore consequuntur.','5'),
+('71','cumque','Reprehenderit cupiditate laudantium nam sit neque voluptas est explicabo. Velit quis porro iste et. Occaecati veniam ullam iste quo ut sequi quibusdam. Quas veritatis earum placeat voluptas.','1'),
+('72','error','Est distinctio et voluptatem et autem placeat cupiditate et. Dolor molestiae culpa ratione deserunt dolores nam. Qui sit porro molestias quidem. Et ducimus qui aut provident hic non.','2'),
+('73','rerum','A illo tempore rem commodi. Debitis natus provident corporis consequatur. Nam possimus corporis perspiciatis quidem facere nesciunt et accusantium. Enim voluptates laboriosam labore minus nihil in et qui.','3'),
+('74','quos','Non possimus dolorum laudantium ea. Et nostrum numquam quasi aliquam explicabo iste culpa. Nam tempora sequi ut voluptatem.','4'),
+('75','velit','Consequatur quidem eos corporis. Quidem consequatur in consequatur magnam. Non autem non et illo deserunt voluptatibus ut voluptates. Aut non quis et sed saepe.','5'),
+('76','et','Eum veritatis commodi laudantium id sed impedit minima autem. Impedit ut eius ipsum. Magnam repudiandae sit et et eligendi.','1'),
+('77','consectetur','Nisi eos repellat eum qui exercitationem. Aut laudantium quibusdam ipsum facilis amet deserunt. Dicta officiis omnis possimus enim.','2'),
+('78','aspernatur','Minima vitae voluptatibus non atque vel quidem. Modi est quos sunt dolorem.','3'),
+('79','nemo','Est cupiditate et in inventore ratione ad. Culpa facere debitis tempora cupiditate. Magnam labore ea qui deserunt voluptas excepturi consequuntur.','4'),
+('80','vero','Voluptates est odit cupiditate sunt quis est. Ea rerum et explicabo fugiat eaque. Eos magni ut quisquam voluptatem ex recusandae earum. Ad voluptatem blanditiis iure facere.','5'),
+('81','est','Earum libero placeat numquam ea. Earum enim est praesentium sint. Labore enim magni enim iure exercitationem. Aut velit eos sint accusantium.','1'),
+('82','magni','Ipsam ab excepturi dolorem quod. Suscipit adipisci qui et officia. Nam odit labore facilis molestias qui temporibus. Sunt in nesciunt qui voluptates velit veniam harum voluptas. Aperiam natus maxime et dolore quas nesciunt dolorum.','2'),
+('83','delectus','Non doloremque omnis dolorum eos ea. Dolores blanditiis et debitis quo sed. Magnam tempore ex nobis alias et.','3'),
+('84','quasi','Qui atque ea a blanditiis libero odit. Recusandae dolorem vitae facilis enim perferendis. In eaque non dolorem et ut quisquam.','4'),
+('85','reprehenderit','Fugiat nemo qui aliquam sed aut repellat consequatur. Ut consequatur est rerum. Est sapiente omnis quidem non eos maxime. Natus aspernatur cumque doloribus. Facere veritatis quia consequuntur est facilis mollitia maxime.','5'),
+('86','debitis','Et ea vitae tempora quidem. Nihil suscipit quia aspernatur dolores saepe eaque deleniti.','1'),
+('87','voluptas','Dolorem odio ut sit soluta. Consectetur ipsum explicabo alias id. Qui dolorum dolorem veritatis nam pariatur dolores.','2'),
+('88','repellat','Dolorem non quisquam necessitatibus consequuntur qui ut. Impedit in magnam sint est. Laudantium repudiandae aliquid voluptatibus voluptatem. Ut ut deleniti omnis sint dolores.','3'),
+('89','repudiandae','Ipsum laudantium sint ea quos. Et aliquam aliquid sit aliquam beatae nam sapiente. Asperiores consequatur voluptas molestias dolor quidem provident tenetur. Delectus quam consequatur aspernatur qui accusantium natus nihil.','4'),
+('90','nisi','Ut eaque similique laudantium alias debitis ea quos. Consequatur aut et ab esse exercitationem. Sunt et et optio maxime vitae repellat ex.','5'),
+('91','incidunt','Consequuntur ut non beatae reiciendis. Suscipit rem porro voluptatem consequuntur hic. Est optio illum sit ad est tempore.','1'),
+('92','dolorem','Cumque ipsum libero sed illo aut consequatur. In quia cupiditate quis possimus laboriosam dolor. Earum delectus ea modi architecto. Occaecati dicta assumenda vero at quaerat ipsum nam.','2'),
+('93','quam','Veniam doloribus placeat hic et voluptates incidunt asperiores. Tenetur laborum impedit molestiae. Ad at mollitia eos dolore. Voluptatem a est esse aut ullam.','3'),
+('94','dolores','Nulla magnam et nesciunt. Quo vel sapiente aut. Iusto unde quam assumenda temporibus quibusdam tenetur dolores.','4'),
+('95','voluptatum','Eum voluptatibus modi ut iste. Assumenda possimus quisquam placeat consequatur excepturi maiores omnis. Autem nulla exercitationem quia.','5'),
+('96','ut','Nostrum dolore eveniet perferendis totam nam repudiandae occaecati. Cum quia rerum corrupti blanditiis harum dignissimos molestiae. Odio officia fugiat autem hic suscipit. Asperiores quam fuga qui quidem voluptas sit esse.','1'),
+('97','harum','Nemo quo dolor explicabo. Ut quam itaque quo totam. Cupiditate aspernatur ut voluptatem impedit.','2'),
+('98','sint','Ea aliquid inventore dicta asperiores sit autem et illo. Optio optio nihil ipsam. Facere magni animi quis rem molestias corrupti occaecati. Temporibus blanditiis nobis facilis quae corporis molestiae et.','3'),
+('99','libero','Magnam quaerat omnis nobis inventore. Illum alias molestiae corrupti qui. Quasi qui facilis qui occaecati dolores doloremque in. Dolorum soluta excepturi iste dolorem.','4'),
+('100','corrupti','Porro ut similique voluptatem iure. Ex quia autem aut. Adipisci iure assumenda reprehenderit blanditiis magni est autem aut. Quisquam cumque aperiam voluptatem ea.','5'); 

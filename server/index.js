@@ -16,14 +16,6 @@ app.get('/menu', function(req, res) {
   db.getAll(res);
 });
 
-// Create POST route
-// Include Faker data for the posts
-app.post('/menu',function(req, res) {
-  console.log('POST Route Works!')
-});
-
-
-
 app.listen(port, function() {
   console.log(`listening on port ${port}`);
 });
