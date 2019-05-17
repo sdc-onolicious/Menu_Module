@@ -8,19 +8,20 @@ USE complete_menu;
 CREATE TABLE menu (
   id INT NOT NULL AUTO_INCREMENT,
   main_description VARCHAR(255),
-  single_menu_item VARCHAR(255),
+  single_menu VARCHAR(255),
   price_per_guest INT,
   PRIMARY KEY (id)
 );
 
 CREATE TABLE menu_items (
   id INT NOT NULL AUTO_INCREMENT,
-  item_name VARCHAR(255),
-  item_description VARCHAR(255),
-  menu_item_id INT,
-  FOREIGN KEY (menu_item_id) REFERENCES menu (id),
+  dish_name VARCHAR(255),
+  dish_description VARCHAR(255),
+  single_menu_id INT,
+  FOREIGN KEY (single_menu_id) REFERENCES menu (id),
   PRIMARY KEY (id)
 );
 
-INSERT INTO menu (main_description, single_menu_item, price_per_guest) VALUES ('Test D', 'Test menu', 100);
-INSERT INTO menu_items (item_name, item_description, menu_item_id) VALUES ('little Test D', 'little Test menu', 1);
+INSERT INTO menu (main_description, single_menu, price_per_guest) VALUES ('Test D', 'Test menu', 100);
+INSERT INTO menu_items (dish_name, dish_description, single_menu_id) VALUES ('little Test D', 'little Test menu', 1);
+INSERT INTO menu_items (dish_name, dish_description, single_menu_id) VALUES ('little Test Deee', 'little Test menu', 1);

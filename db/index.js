@@ -10,10 +10,10 @@ const connection = mysql.createConnection({
 });
 
 
-// Read all function used for the server GET route (INNER JOIN menu_items ON menu.id)
+// Read all function used for the server GET route 
+// INNER JOIN selects all rows from both participating tables as long as there is a match between columns
 const getAll = function(res) {
   connection.connect();
-  console.log('it reached here');
   connection.query('SELECT * FROM menu INNER JOIN menu_items ON menu.id', (err, data) => {
     if (err) {
       res.status(500);
@@ -26,6 +26,9 @@ const getAll = function(res) {
   connection.end();
 };
 
+
+
+// export functions to be used elsewhere
 module.exports = {
   connection: connection,
   getAll: getAll

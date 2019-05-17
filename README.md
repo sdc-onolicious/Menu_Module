@@ -21,9 +21,13 @@
 ## Usage
 
 > Some usage instructions
+
 > Run Scripts
 >> $ npm run react-dev
 >> $ npm run server-dev
+
+> Change db connection
+>> user, and password if you have one
 
 ## Requirements
 
