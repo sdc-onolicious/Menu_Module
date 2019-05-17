@@ -28,9 +28,12 @@
 
 > Change db connection
 >> user, and password if you have one
->> For mySQL
+
+> For mySQL
 >> Run command mysql -u root -p < schema.sql to create Database and tables
->> Check tables for 2 hardcoded data that will later be seeded with faker data
+>> Run command mysql -u root -p to log into mysql
+>> USE complete_menu database
+>> Run command SELECT * FROM menu INNER JOIN menu_items ON menu.id
 
 ## Requirements
 
