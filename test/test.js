@@ -2,6 +2,9 @@ const puppeteer = require('puppeteer');
 
 const pageUrl = 'http://localhost:3040/menu';
 
+const app = require('../server/index.js');
+const request = require('supertest');
+
 let page;
 let browser;
 const width = 1280;
@@ -20,10 +23,11 @@ beforeAll(async () => {
     browser.close();
   });
 
-  describe('Page renders correctly', () => {
-    
-    
-    test('renders without crashing', () => {
-      
+  describe('Test the root path', () => {
+    test('GET route is successful', async(done) => {
+      request(app).get('/menu').then((response) => {
+        expect(response.statusCode).toBe(200);
+        done();
+      });
     });
-  });
+});
