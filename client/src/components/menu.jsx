@@ -1,13 +1,22 @@
 import React, {Component} from 'react';
 import axios from 'axios';
 import MenuItem from './menuItems.jsx';
+import MenuButton from './menuButton.jsx';
+import MenuContainer from './menuContainer.jsx';
+import MenuButtonContainer from './menuButtonContainer.jsx';
 
+
+// Will be the the actual full menu
 class Menu extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      menu: []
+      menus: [],
+      restaurantLoaded: false,
+      menuItems: [],
+      restaurantId: 1,
+      currentMenu: 0,
     };
   }
 
@@ -30,13 +39,11 @@ class Menu extends Component {
       <div>
         <div id="menu">
           <h1>Menu</h1>
-          <MenuItem menu={this.state.menu} />
+          <div>Hello World!</div>
         </div>
       </div>
     );
   }
-
-
 }
 
 export default Menu;

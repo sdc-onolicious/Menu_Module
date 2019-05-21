@@ -26,6 +26,9 @@ const getAll = function(res) {
   // connection.end();
 };
 
+// Create function to find only needed items 
+
+
 
 // export functions to be used elsewhere
 module.exports = {
