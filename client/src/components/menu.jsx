@@ -1,7 +1,5 @@
 import React, {Component} from 'react';
 import axios from 'axios';
-import MenuItem from './menuItems.jsx';
-import MenuButton from './menuButton.jsx';
 import MenuContainer from './menuContainer.jsx';
 import MenuButtonContainer from './menuButtonContainer.jsx';
 
@@ -15,18 +13,25 @@ class Menu extends Component {
       menus: [],
       restaurantLoaded: false,
       menuItems: [],
-      restaurantId: 1,
-      currentMenu: 0,
     };
   }
 
+  // Add that componenetDidMount
+ 
+
   // Client get route for menu
-  getMenu() {
-    axios.get('/menu')
+  componentDidMount() {
+    console.log('DATA!!!!');
+    axios.get('http://localhost:3040/menu')
       // on success
       .then((data) => {
         // update the state with the returned data from the server
-        this.setState({menu: data.data});
+        console.log('DATA!!!!', data.data[0].price_per_guest);
+        this.setState({
+          menu: data.data,
+          restaurantLoaded: true,
+          menuItems: data.data,
+        });
       })
       // Have a catch for erros
       .catch((err) => {
@@ -34,13 +39,28 @@ class Menu extends Component {
       });
   }
 
+
+
   render() {
+    const styles = {
+      base: {
+        fontFamily: 'Brandon-Bold, Lato,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol',
+        fontSize: '24px',
+        fontWeight: '500',
+        lineHeight: '32px',
+        color: '#2d333f',
+        borderBottom: '1px solid #d8d9db',
+        paddingBottom: '16px',
+        margin: '0 0 0 0',
+        display: 'flex',
+        justifyContent: 'space-between'
+      }
+    };
     return (
-      <div>
-        <div id="menu">
-          <h1>Menu</h1>
-          <div>Hello World!</div>
-        </div>
+      <div id="menu" style={{width: '640px', marginLeft: 'auto', marginRight: 'auto'}}>
+        <h2 style={styles.base}>Menu</h2>
+        {this.state.restaurantLoaded && (<MenuButtonContainer menus={this.state.menus} clickMenu='menu'/>)}
+        {this.state.restaurantLoaded && (<MenuContainer items={this.state.menuItems}/>)}
       </div>
     );
   }

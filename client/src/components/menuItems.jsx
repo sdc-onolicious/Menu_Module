@@ -1,4 +1,5 @@
 import React from 'react';
+// Each menu item will have a dish name, dish description, and price
 
 const MenuItem = (props) => {
   // Need to fix up styling
@@ -35,13 +36,17 @@ const MenuItem = (props) => {
     }
   };
   // will need to format for styling to work
+  // if there is a price string it
+  console.log('THIS IS PROPS FROM MENUITEMS:', props);
+  let price = props.item.price_per_guest ? props.item.price_per_guest.toString() : 0;
+
 
   // Grabbing what we need to display on for menuItems
   return (
-    <div className="itemContainer" >
-      <div className="itemPrice" >${price}</div>
-      <div className="itemName">{item.dish_name}</div>
-      <div className="itemDescription" >{item.dish_description}</div>
+    <div className="itemContainer" style={styles.container}>
+      <div className="dishPrice" style={styles.price}>${price}</div>
+      <div className="dishName">{props.item.dish_name}</div>
+      <div className="dishDescription" style={styles.description}>{props.item.dish_description}</div>
     </div>
   );
 

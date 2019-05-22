@@ -17,7 +17,7 @@ const getAll = function(res) {
   connection.query('SELECT * FROM menu INNER JOIN menu_items ON menu_items.single_menu_id = menu.id', (err, data) => {
     if (err) {
       res.status(500);
-      res.send('getAll request error: ', err);
+      res.send(err);
     } else {
       res.status(200);
       res.send(data);
@@ -25,9 +25,6 @@ const getAll = function(res) {
   });
   // connection.end();
 };
-
-// Create function to find only needed items 
-
 
 
 // export functions to be used elsewhere

@@ -23,18 +23,6 @@ INSERT INTO `menu` (`id`, `main_description`, `single_menu_item`, `price_per_gue
 
 
 DROP TABLE IF EXISTS `menu_items`;
-CREATE TABLE `menu_items` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `dish_name` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `dish_description` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `single_menu_id` int(11) DEFAULT NULL,
-  PRIMARY KEY (`id`),
-  KEY `single_menu_id` (`single_menu_id`),
-  CONSTRAINT `menu_items_ibfk_1` FOREIGN KEY (`single_menu_id`) REFERENCES `menu` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=101 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
-
-DROP TABLE IF EXISTS `menu_items`;
 
 CREATE TABLE `menu_items` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
