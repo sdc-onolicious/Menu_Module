@@ -2,14 +2,16 @@
 import React from 'react';
 import MenuButton from './menuButton.jsx';
 
-const MenuButtonContainer = ({menus, clickMenu, currentMenu}) => {
-  let key = 0;
-  const menuButtons = menus.map(menu => {
-    key++;
-    return <MenuButton key={key} menu={menu} clickMenu={() => clickMenu(menu)} currentMenu={currentMenu} />;
+const MenuButtonContainer = (props) => {
+  let uniqueKey = 0;
+  // console.log('menubuttonContainer props:', props);
+  const menuButton = props.menus.map(menu => {
+    console.log(menu.single_menu);
+    uniqueKey++;
+    return <MenuButton key={uniqueKey} menu={menu}/>;
   });
   return (
-    <div>{menuButtons}</div>
+    <div>{menuButton}</div>
   );
 };
 

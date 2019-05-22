@@ -6,10 +6,11 @@ const MenuTypeContainer = (props) => {
 
   // Gives just 1 menu need multiple
   console.log(props.items[0].single_menu);
-
+  let uniqueKey = 0;
   // console.log('THIS IS COMING FROM MENUTYPECONTAINER:', props.items);
   const menuItems = props.items.map(menuComp => {
-    return <MenuItem key={props.items.id} item={menuComp}/>;
+    uniqueKey++;
+    return <MenuItem key={uniqueKey} item={menuComp}/>;
   });
 
 
@@ -46,7 +47,7 @@ const MenuTypeContainer = (props) => {
   return (
     <div styler={styles.mainContainer}>
       <div style={styles.headerDiv}>
-        <h3 className="menuTypeHeader" style={styles.header}>{props.items[0].single_menu}</h3>
+        <h3 className="menuTypeHeader" style={styles.header}>{props.items.single_menu}</h3>
       </div>
       <div style={styles.container}>
         {menuItems}

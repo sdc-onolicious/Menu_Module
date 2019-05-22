@@ -26,7 +26,7 @@ class Menu extends Component {
       // on success
       .then((data) => {
         // update the state with the returned data from the server
-        console.log('DATA!!!!', data.data[0].price_per_guest);
+        console.log('DATA!!!!', data.data);
         this.setState({
           menu: data.data,
           restaurantLoaded: true,
@@ -59,7 +59,7 @@ class Menu extends Component {
     return (
       <div id="menu" style={{width: '640px', marginLeft: 'auto', marginRight: 'auto'}}>
         <h2 style={styles.base}>Menu</h2>
-        {this.state.restaurantLoaded && (<MenuButtonContainer menus={this.state.menus} clickMenu='menu'/>)}
+        {this.state.restaurantLoaded && (<MenuButtonContainer menus={this.state.menuItems} clickMenu='menu'/>)}
         {this.state.restaurantLoaded && (<MenuContainer items={this.state.menuItems}/>)}
       </div>
     );
