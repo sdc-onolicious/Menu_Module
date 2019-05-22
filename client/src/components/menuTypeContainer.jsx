@@ -2,11 +2,14 @@ import React from 'react';
 import MenuItem from './menuItems.jsx';
 
 // Holds the menu types aka Breakfast, Lunch etc.
-const MenuTypeContainer = ({itemsType, items, lastType}) => {
-  let key = 0;
-  const menuItems = items.map(item => {
-    key++;
-    return <MenuItem key={key} item={item}/>;
+const MenuTypeContainer = (props) => {
+
+  // Gives just 1 menu need multiple
+  console.log(props.items[0].single_menu);
+
+  // console.log('THIS IS COMING FROM MENUTYPECONTAINER:', props.items);
+  const menuItems = props.items.map(menuComp => {
+    return <MenuItem key={props.items.id} item={menuComp}/>;
   });
 
 
@@ -36,14 +39,14 @@ const MenuTypeContainer = ({itemsType, items, lastType}) => {
     },
     mainContainer: {
       fontFamily: 'Lato,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol',
-      borderBottom: lastType ? '0' : '1px solid #d8d9db',
+      borderBottom: '1px solid #d8d9db',
     }
   };
 
   return (
     <div styler={styles.mainContainer}>
       <div style={styles.headerDiv}>
-        <h3 className="menuTypeHeader" style={styles.header}>{itemsType}</h3>
+        <h3 className="menuTypeHeader" style={styles.header}>{props.items[0].single_menu}</h3>
       </div>
       <div style={styles.container}>
         {menuItems}

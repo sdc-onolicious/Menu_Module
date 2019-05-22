@@ -35,16 +35,22 @@ const MenuItem = (props) => {
       fontWeight: 500,
     }
   };
-  // will need to format for styling to work
-  // if there is a price string it
-  console.log('THIS IS PROPS FROM MENUITEMS:', props);
-  let price = props.item.price_per_guest ? props.item.price_per_guest.toString() : 0;
+  
+  
+  // Randomizing price for each dish
+  // COME BACK AND UPDATE NOT RANDOM
+  console.log('THIS IS PROPS FROM MENUITEMS:', props.item.price_per_guest);
+  let priceArray = [];
+  priceArray.push(props.item.price_per_guest);
+  // console.log(priceArray);
+  
+  let randomPrice = priceArray[Math.floor(Math.random() * priceArray.length)];
 
 
   // Grabbing what we need to display on for menuItems
   return (
     <div className="itemContainer" style={styles.container}>
-      <div className="dishPrice" style={styles.price}>${price}</div>
+      <div className="dishPrice" style={styles.price}>${randomPrice}</div>
       <div className="dishName">{props.item.dish_name}</div>
       <div className="dishDescription" style={styles.description}>{props.item.dish_description}</div>
     </div>
