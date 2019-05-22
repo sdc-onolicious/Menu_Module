@@ -1,5 +1,6 @@
 import React from 'react';
 import MenuTypeContainer from './menuTypeContainer.jsx';
+import $ from 'jquery';
 
 // This holds the menu which will expand or collapse and fade out
 class MenuContainer extends React.Component {
@@ -12,7 +13,7 @@ class MenuContainer extends React.Component {
     };
   }
 
-  // Button to expand the menu
+  // Button to expand/close the menu
   clickExpandButton() {
     const newExpanded = !this.state.expanded;
     const newShowGradient = !this.state.showGradient;
@@ -48,6 +49,8 @@ class MenuContainer extends React.Component {
       expanded: newExpanded,
     });
   }
+
+  
 
   render() {
     const styles = {
