@@ -38,19 +38,15 @@ const MenuItem = (props) => {
   
   
   // Randomizing price for each dish
-  // COME BACK AND UPDATE NOT RANDOM
-  console.log('THIS IS PROPS FROM MENUITEMS:', props.item.price_per_guest);
-  let priceArray = [];
-  priceArray.push(props.item.price_per_guest);
+  // console.log('THIS IS PROPS FROM MENUITEMS:', props.item.price_per_guest);
+  // let priceArray = props.item.price_per_guest;
   // console.log(priceArray);
-  
-  let randomPrice = priceArray[Math.floor(Math.random() * priceArray.length)];
-
+ console.log(props.item);  
 
   // Grabbing what we need to display on for menuItems
   return (
     <div className="itemContainer" style={styles.container}>
-      <div className="dishPrice" style={styles.price}>${randomPrice}</div>
+      <div className="dishPrice" style={styles.price}>${props.item.price_per_guest}</div>
       <div className="dishName">{props.item.dish_name}</div>
       <div className="dishDescription" style={styles.description}>{props.item.dish_description}</div>
     </div>

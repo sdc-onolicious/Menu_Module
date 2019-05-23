@@ -1,9 +1,8 @@
 import React from 'react';
 
 // Actual menu button
-// maybe add currentMenu to params?
+// Want to randomly pick one and display at all times
 const MenuButton = (props) => {
-  console.log('menu button', props.menu.single_menu);
   const styles = {
     fontFamily: 'Brandon, Lato,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol',
     outline: 'none',
@@ -24,7 +23,7 @@ const MenuButton = (props) => {
   };
 
   return (
-    <button style={styles} >{props.menu.single_menu}</button>
+    <button style={styles} > Menu </button>
   );
 };
 

@@ -1,17 +1,21 @@
 import React from 'react';
 import MenuItem from './menuItems.jsx';
 
-// Holds the menu types aka Breakfast, Lunch etc.
+// Holds the sub menu items
 const MenuTypeContainer = (props) => {
 
-  // Gives just 1 menu need multiple
-  console.log(props.items[0].single_menu);
+  // Gives us the entire menu items
+  // console.log(props.items[0].single_menu);
   let uniqueKey = 0;
   // console.log('THIS IS COMING FROM MENUTYPECONTAINER:', props.items);
   const menuItems = props.items.map(menuComp => {
     uniqueKey++;
-    return <MenuItem key={uniqueKey} item={menuComp}/>;
+    return <MenuItem key={uniqueKey} item={menuComp} />;
   });
+
+  // randomly select one object within the array of data for use when displaying the single menu choice
+  let randomSingleMenu = props.items[Math.floor(Math.random() * props.items.length)];
+  // console.log(randomSingleMenu); Gives back 1 object from the array
 
 
   const styles = {
@@ -47,7 +51,7 @@ const MenuTypeContainer = (props) => {
   return (
     <div styler={styles.mainContainer}>
       <div style={styles.headerDiv}>
-        <h3 className="menuTypeHeader" style={styles.header}>{props.items.single_menu}</h3>
+        <h3 className="menuTypeHeader" style={styles.header}>{randomSingleMenu.single_menu}</h3> 
       </div>
       <div style={styles.container}>
         {menuItems}

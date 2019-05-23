@@ -4,12 +4,9 @@ import MenuButton from './menuButton.jsx';
 
 const MenuButtonContainer = (props) => {
   let uniqueKey = 0;
-  // console.log('menubuttonContainer props:', props);
-  const menuButton = props.menus.map(menu => {
-    console.log(menu.single_menu);
-    uniqueKey++;
-    return <MenuButton key={uniqueKey} menu={menu}/>;
-  });
+  // console.log('menubuttonContainer props:', props.menus); <- Array of 100 objects
+  const menuButton = <MenuButton key={uniqueKey} menu='menu'/>;
+
   return (
     <div>{menuButton}</div>
   );

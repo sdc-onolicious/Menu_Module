@@ -15,10 +15,7 @@ class Menu extends Component {
       menuItems: [],
     };
   }
-
-  // Add that componenetDidMount
  
-
   // Client get route for menu
   componentDidMount() {
     console.log('DATA!!!!');
