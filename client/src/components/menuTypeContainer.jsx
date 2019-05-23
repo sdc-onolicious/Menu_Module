@@ -16,7 +16,7 @@ const MenuTypeContainer = (props) => {
   // randomly select one object within the array of data for use when displaying the single menu choice
   let randomSingleMenu = props.items[Math.floor(Math.random() * props.items.length)];
   // console.log(randomSingleMenu); Gives back 1 object from the array
-
+  
 
   const styles = {
     headerDiv: {
