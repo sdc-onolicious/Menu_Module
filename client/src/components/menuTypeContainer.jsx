@@ -51,7 +51,7 @@ const MenuTypeContainer = (props) => {
   return (
     <div styler={styles.mainContainer}>
       <div style={styles.headerDiv}>
-        <h3 className="menuTypeHeader" style={styles.header}>{randomSingleMenu.single_menu}</h3> 
+        <h3 className="menuTypeHeader" style={styles.header}>{props.items[1].single_menu}</h3> 
       </div>
       <div style={styles.container}>
         {menuItems}
