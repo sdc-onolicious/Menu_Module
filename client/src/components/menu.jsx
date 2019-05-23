@@ -51,13 +51,24 @@ class Menu extends Component {
         margin: '0 0 0 0',
         display: 'flex',
         justifyContent: 'space-between'
+      },
+      footer: {
+        fontSize: '10px'
       }
     };
+
+    // borderTop: '1px solid #d8d9db' adds the gray line
     return (
       <div id="menu" style={{width: '640px', marginLeft: 'auto', marginRight: 'auto'}}>
         <h2 style={styles.base}>Menu</h2>
         {this.state.restaurantLoaded && (<MenuButtonContainer menus={this.state.menuItems} clickMenu='menu'/>)}
         {this.state.restaurantLoaded && (<MenuContainer items={this.state.menuItems}/>)}
+        <div className='footer' style={{fontSize: '10px', fontWeight: 500, paddingTop: '16px', paddingBottom: '16px', borderTop: '1px solid #d8d9db', display: 'flex', alignItems: 'center', justifyContent: 'space-between'}}>
+          Last updated: April 27, 2019 
+          <div className='menu-provider' style={{display: 'flex', alignItems: 'center', paddingTop: '16px', paddingBottom: '16px'}}>
+            <img src="https://a.singleplatform.com/OpenTable/kinjo-2/provided_by_2.png?sp_dt=20190427" alt="Single Platform"></img>
+          </div>
+        </div>
       </div>
     );
   }

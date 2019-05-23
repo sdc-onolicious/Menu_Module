@@ -1,4 +1,5 @@
 -- run mysql -u root -p < schema.sql to create Database and tables
+-- SELECT * FROM info ORDER BY RAND() LIMIT 1
 DROP DATABASE IF EXISTS complete_menu;
 
 CREATE DATABASE complete_menu;
