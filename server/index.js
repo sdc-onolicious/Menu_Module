@@ -1,10 +1,14 @@
-let faker = require('faker');
+const cors = require('cors');
+const bodyParser = require('body-parser');
 
 const express = require('express');
 
 let app = express();
 
 let port = 3040;
+
+app.use(cors());
+app.use(bodyParser.urlencoded({ extended: true }));
 
 // get db connection
 const db = require('../db/index.js');

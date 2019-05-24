@@ -1,4 +1,5 @@
 -- run mysql -u root -p < schema.sql to create Database and tables
+-- SELECT * FROM info ORDER BY RAND() LIMIT 1
 DROP DATABASE IF EXISTS complete_menu;
 
 CREATE DATABASE complete_menu;
@@ -20,18 +21,6 @@ INSERT INTO `menu` (`id`, `main_description`, `single_menu_item`, `price_per_gue
 INSERT INTO `menu` (`id`, `main_description`, `single_menu_item`, `price_per_guest`) VALUES (3, 'Provident est quo tenetur unde. Excepturi aspernatur corporis maxime dolorem sunt quo. Laborum voluptate qui autem impedit nemo qui explicabo. Ut soluta autem id aut perspiciatis pariatur saepe.', 'quaerat', 70252454);
 INSERT INTO `menu` (`id`, `main_description`, `single_menu_item`, `price_per_guest`) VALUES (4, 'Neque consequuntur aut nesciunt. Quae perferendis velit dolore maiores in rerum sint. Eius veritatis asperiores dolore voluptate voluptas laudantium. Sunt asperiores beatae qui reprehenderit aut iste.', 'molestias', 18437);
 INSERT INTO `menu` (`id`, `main_description`, `single_menu_item`, `price_per_guest`) VALUES (5, 'Et dolorum assumenda tempora. Atque maiores delectus dolor earum dolores voluptas commodi.', 'expedita', 1);
-
-
-DROP TABLE IF EXISTS `menu_items`;
-CREATE TABLE `menu_items` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `dish_name` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `dish_description` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `single_menu_id` int(11) DEFAULT NULL,
-  PRIMARY KEY (`id`),
-  KEY `single_menu_id` (`single_menu_id`),
-  CONSTRAINT `menu_items_ibfk_1` FOREIGN KEY (`single_menu_id`) REFERENCES `menu` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=101 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 
 DROP TABLE IF EXISTS `menu_items`;
