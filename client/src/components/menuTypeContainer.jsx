@@ -61,7 +61,7 @@ const MenuTypeContainer = (props) => {
       fontFamily: 'Lato,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol',
       columnCount: 2,
       columnGap: '32px',
-      paddingBottom: '65px'
+      paddingBottom: '75px'
     },
     mainContainer: {
       fontFamily: 'Lato,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol',
@@ -84,7 +84,7 @@ const MenuTypeContainer = (props) => {
         <h3 className="menuTypeHeader" style={styles.header}>{props.items[25].single_menu_item}</h3> 
       </div>
       <div style={{fontFamily: 'Lato,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol',
-        columnCount: 2, columnGap: '32px', paddingBottom: '32px'}}>
+        columnCount: 2, columnGap: '32px', paddingBottom: '25px'}}>
         {menuItems2}
       </div>
       <div className='border' style={{borderTop: '1px solid #d8d9db', display: 'block'}}></div>
