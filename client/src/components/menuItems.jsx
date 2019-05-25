@@ -5,7 +5,7 @@ const MenuItem = (props) => {
   const styles = {
     container: {
       fontFamily: 'Brandon, Lato,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol',
-      fontSize: '13px',
+      fontSize: '14px',
       lineHeight: '20px',
       fontWeight: 500,
       marginTop: 0,
@@ -23,7 +23,7 @@ const MenuItem = (props) => {
       marginBlockEnd: '1em',
       marginInlineStart: '0px',
       marginInlineEnd: '0px',
-      fontSize: '13px',
+      fontSize: '14px',
       lineHeight: '20px',
     },
     price: {
@@ -40,7 +40,7 @@ const MenuItem = (props) => {
   // console.log('THIS IS PROPS FROM MENUITEMS:', props.item.price_per_guest);
   
   // console.log(priceArray);
-  console.log(props.item.price_per_guest);
+  // console.log(props.item.price_per_guest);
 
   // Grabbing what we need to display on for menuItems
   return (
