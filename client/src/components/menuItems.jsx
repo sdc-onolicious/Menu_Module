@@ -5,7 +5,7 @@ const MenuItem = (props) => {
   const styles = {
     container: {
       fontFamily: 'Brandon, Lato,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol',
-      fontSize: '14px',
+      fontSize: '13px',
       lineHeight: '20px',
       fontWeight: 500,
       marginTop: 0,
@@ -23,7 +23,7 @@ const MenuItem = (props) => {
       marginBlockEnd: '1em',
       marginInlineStart: '0px',
       marginInlineEnd: '0px',
-      fontSize: '14px',
+      fontSize: '13px',
       lineHeight: '20px',
     },
     price: {
