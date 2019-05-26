@@ -26,9 +26,22 @@ const getAll = function(res) {
   // connection.end();
 };
 
+// Read all function for related restaurants for server GET route 
+const getRelated = function(res) {
+  connection.query('SELECT * FROM related', (err, data) => {
+    if (err) {
+      res.status(500);
+      res.send(err);
+    } else {
+      res.status(200);
+      res.send(data);
+    }
+  });
+};
 
 // export functions to be used elsewhere
 module.exports = {
   connection: connection,
-  getAll: getAll
+  getAll: getAll,
+  getRelated: getRelated
 };
