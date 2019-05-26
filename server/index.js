@@ -7,6 +7,9 @@ let app = express();
 
 let port = 3040;
 
+// serves up static files to localhost
+app.use(express.static('client/dist'));
+
 app.use(cors());
 app.use(bodyParser.urlencoded({ extended: true }));
 

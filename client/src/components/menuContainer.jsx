@@ -124,7 +124,7 @@ class MenuContainer extends React.Component {
             onMouseLeave={this.mouseExitButton.bind(this)} 
             onClick={this.clickExpandButton.bind(this)}
             style={styles.button}>
-            {this.state.expanded ? 'Collapse Menu' : 'View Full Menu'}
+            {this.state.expanded ? 'Collapse menu' : 'View full menu'}
           </button>
         </div>
       </div>
