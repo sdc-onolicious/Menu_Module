@@ -1,8 +1,8 @@
 import React from 'react';
 import axios from 'axios';
 import SingleBox from './singleBox.jsx';
-// import rightArrow from '../../dist/photos/keyboard-right-arrow-button.svg';
-// import leftArrow from '../../dist/photos/left-arrow-key.svg';
+// import rightArrow from '../../dist/photos/right-arrow-circular-button.svg';
+// import leftArrow from '../../dist/photos/back-arrow-circular-symbol.svg';
 
 console.log('hello from carousel');
 class Carousel extends React.Component {
@@ -14,19 +14,18 @@ class Carousel extends React.Component {
         'https://resizer.otstatic.com/v2/photos/medium/25544386.jpg',
         'https://resizer.otstatic.com/v2/photos/medium/25595276.jpg',
         'https://resizer.otstatic.com/v2/photos/medium/25954273.jpg',
-        'https://resizer.otstatic.com/v2/photos/medium/23687221.jpg',
+        'https://resizer.otstatic.com/v2/photos/medium/24195994.jpg',
         'https://resizer.otstatic.com/v2/photos/medium/23671379.jpg',
-        'https://resizer.otstatic.com/v2/photos/medium/23671632.jpg',
+        'https://resizer.otstatic.com/v2/photos/medium/24732540.jpg',
         'https://resizer.otstatic.com/v2/photos/medium/24094108.jpg',
         'https://resizer.otstatic.com/v2/photos/medium/25012047.jpg',
-        'https://resizer.otstatic.com/v2/photos/medium/23673519.jpg',
+        'https://resizer.otstatic.com/v2/photos/medium/24489574.jpg',
         'https://resizer.otstatic.com/v2/photos/medium/23688060.jpg'
       ],
-      information: []
+      information: [],
     };
 
     this.nextSlide = this.nextSlide.bind(this);
-    this.prevSlide = this.prevSlide.bind(this);
   }
 
   componentDidMount() {
@@ -44,16 +43,6 @@ class Carousel extends React.Component {
       });
   }
 
-  prevSlide() {
-    // find the index of the last image in the array
-    const lastIndex = this.state.images.length - 1;
-    const resetIndex = this.state.currentImageIndex === 0;
-    const index = resetIndex ? lastIndex : this.state.currentImageIndex - 1;
-    this.setState({
-      currentImageIndex: index
-    });
-  }
-
   nextSlide() {
     // find the index of the last image in the array
     const lastIndex = this.state.images.length - 1;
@@ -66,6 +55,18 @@ class Carousel extends React.Component {
     });
   }
 
+
+  mouseEnterButton() {
+    this.setState({
+      mouseOver: true
+    });
+  }
+
+  mouseExitButton() {
+    this.setState({
+      mouseOver: false
+    });
+  }
 
   render() {
     const styles = {
@@ -81,6 +82,30 @@ class Carousel extends React.Component {
         margin: '0 0 0 0',
         display: 'flex',
         justifyContent: 'space-between'
+      },
+      buttonNext: {
+        height: '48px',
+        paddingBottom: '32px',
+        padding: '16px',
+        border: '1px solid #d8d9db',
+        textDecoration: 'none',
+        fontSize: '16px',
+        lineHeight: '1rem',
+        width: '18rem',
+        fontWeight: 500,
+        borderRadius: '2px',
+        color: '#2d333f',
+        display: 'inline-block',
+        boxSizing: 'border-box',
+        backgroundColor: '#fff',
+        cursor: 'pointer',
+        fontFamily: 'Brandon, Lato,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol',
+        border: this.state.mouseOver ? '2px solid #da3743' : '1px solid #d8d9db',
+        bottom: this.state.mouseOver ? '-1px' : '0px',
+        boxShadow: 'rgba(51,51,51,.2) 0 2px 4px',
+        margin: '0 auto 32px auto',
+        left: '50%',
+
       }
     };
   
@@ -93,22 +118,19 @@ class Carousel extends React.Component {
     // if the firstThreeVideo's length is lower than 3 images than append missing images from the beginning of the original array 
       firstThreeVideo = firstThreeVideo.concat(this.state.images.slice(0, 2 - firstThreeVideo.length));
     }
-    
-    let myComponent;
-    if (this.state.information) {
-      myComponent = <SingleBox info={this.state.information}/>;
-    } else {
-      myComponent = null;
-    }
  
     return (
       <div className='restaurantContainer' style={{width: '640px', marginLeft: 'auto', marginRight: 'auto'}}>
         <div style={styles.base}>Related Restaurants</div>
-        <div style={{paddingTop: '36px', height: '100px', marginRight: '.5rem'}} > 
+        <div style={{paddingTop: '36px', paddingBottom: '36px'}}> 
           {firstThreeVideo.map((image, index) =>
-            <img key={index} src={image} alt=""/>
+            <img key={index} src={image} alt="" width= '360px' height= '360px' transition= 'transform .5s, filter 1.5s ease-in-out' transform= 'scale(1.1)'/>
           )} 
-          {myComponent}
+          <SingleBox info={this.state.information}/>
+          <button style={styles.buttonNext} onClick={this.nextSlide} onMouseEnter={this.mouseEnterButton.bind(this)} 
+            onMouseLeave={this.mouseExitButton.bind(this)} >
+           Next Related Restaurants
+          </button>
         </div>
       </div>
        
