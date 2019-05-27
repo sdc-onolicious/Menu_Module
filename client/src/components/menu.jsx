@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import axios from 'axios';
 import MenuContainer from './menuContainer.jsx';
 import MenuButtonContainer from './menuButtonContainer.jsx';
-
+import Carousel from './carousel.jsx';
 
 // Will be the the actual full menu
 class Menu extends Component {
@@ -68,6 +68,9 @@ class Menu extends Component {
           <div className='menu-provider' style={{display: 'flex', alignItems: 'center', paddingTop: '16px', paddingBottom: '16px'}}>
             <img src="https://a.singleplatform.com/OpenTable/kinjo-2/provided_by_2.png?sp_dt=20190427" alt="Single Platform"></img>
           </div>
+        </div>
+        <div className='carousel'>
+          <Carousel />
         </div>
       </div>
     );
