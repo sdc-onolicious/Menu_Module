@@ -35,6 +35,49 @@ CREATE TABLE `menu_items` (
   CONSTRAINT `menu_items_ibfk_1` FOREIGN KEY (`single_menu_id`) REFERENCES `menu` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=101 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
+
+
+DROP TABLE IF EXISTS `related`;
+
+CREATE TABLE `related` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `cuisine` varchar(50) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `location` varchar(50) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `reviews` int(11) DEFAULT NULL,
+  `image` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  UNIQUE KEY `id` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=26 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+INSERT INTO `related` (`id`, `name`, `cuisine`, `location`, `reviews`, `image`) VALUES (1, 'Torp and Sons', 'Quis', 'East Eudora', 3, 'tmp//5429725bd999d57b0c8a4db37a8bfa5a.jpg');
+INSERT INTO `related` (`id`, `name`, `cuisine`, `location`, `reviews`, `image`) VALUES (2, 'Friesen, Hoppe and Trantow', 'Tempora', 'Hassanport', 4, 'tmp//2f7de7e966c2367ebdd2e33f14200c77.jpg');
+INSERT INTO `related` (`id`, `name`, `cuisine`, `location`, `reviews`, `image`) VALUES (3, 'Bode-Fahey', 'Nisi', 'New Jaylenview', 6, 'tmp//668cde4d6e65891f60763f84e88372e4.jpg');
+INSERT INTO `related` (`id`, `name`, `cuisine`, `location`, `reviews`, `image`) VALUES (4, 'Schiller, Romaguera and Schoen', 'Eveniet', 'Thoratown', 5, 'tmp//6426f945a22f4b97c010514c7974f6fc.jpg');
+INSERT INTO `related` (`id`, `name`, `cuisine`, `location`, `reviews`, `image`) VALUES (5, 'Little-Smitham', 'Quia', 'Martaburgh', 3, 'tmp//5d283ee293e795f922d1609c830c10ad.jpg');
+INSERT INTO `related` (`id`, `name`, `cuisine`, `location`, `reviews`, `image`) VALUES (6, 'Bauch-Bruen', 'Id', 'Littelview', 5, 'tmp//ba1f97c85077fe1df7eb462714c19f5c.jpg');
+INSERT INTO `related` (`id`, `name`, `cuisine`, `location`, `reviews`, `image`) VALUES (7, 'Balistreri, Schultz and Wisoky', 'Aab', 'Connellystad', 8, 'tmp//914ed837b860ee59bd297a913df438f6.jpg');
+INSERT INTO `related` (`id`, `name`, `cuisine`, `location`, `reviews`, `image`) VALUES (8, 'Beer, Anderson and Collier', 'Nulla', 'East Adrain', 1, 'tmp//45511ee43ef400644429b98d09dbacc7.jpg');
+INSERT INTO `related` (`id`, `name`, `cuisine`, `location`, `reviews`, `image`) VALUES (9, 'Walsh-Turcotte', 'Consequunturaa', 'South Jailynview', 9, 'tmp//d5fd0104e689fef0c18df5ae70e61b0a.jpg');
+INSERT INTO `related` (`id`, `name`, `cuisine`, `location`, `reviews`, `image`) VALUES (10, 'Greenfelder Group', 'Nostrumass', 'Runolfssonfort', 2, 'tmp//f00730a17a99c24cb171b6d8f756e156.jpg');
+INSERT INTO `related` (`id`, `name`, `cuisine`, `location`, `reviews`, `image`) VALUES (11, 'Cassin, Weissnat and Bauch', 'Enim', 'North Joshuachester', 8, 'tmp//b08192e3ec19befaa424f03a78466057.jpg');
+INSERT INTO `related` (`id`, `name`, `cuisine`, `location`, `reviews`, `image`) VALUES (12, 'Kuhlman-Torp', 'Quodalia', 'East Ceasarmouth', 2, 'tmp//60c2f365bc4a68d3fa93ebd9992389ad.jpg');
+INSERT INTO `related` (`id`, `name`, `cuisine`, `location`, `reviews`, `image`) VALUES (13, 'Reichel, Vandervort and Sawayn', 'Magnam', 'Port Cassandrafort', 1, 'tmp//51405d885f5b8e079f7e68ca0f5a7d1c.jpg');
+INSERT INTO `related` (`id`, `name`, `cuisine`, `location`, `reviews`, `image`) VALUES (14, 'Leffler-Hyatt', 'Etumas', 'Wittingbury', 4, 'tmp//428640fbb0b13b2199be48cf26025528.jpg');
+INSERT INTO `related` (`id`, `name`, `cuisine`, `location`, `reviews`, `image`) VALUES (15, 'Thiel-Carroll', 'Repudiandae', 'Port Audreanneberg', 9, 'tmp//4d0e66bd1613c9b4908f35ce5aa8ce74.jpg');
+INSERT INTO `related` (`id`, `name`, `cuisine`, `location`, `reviews`, `image`) VALUES (16, 'Balistreri, Koepp and Hayes', 'Non', 'North Wilhelmineland', 9, 'tmp//81b51239830b363fc93b118dbdc0fcdf.jpg');
+INSERT INTO `related` (`id`, `name`, `cuisine`, `location`, `reviews`, `image`) VALUES (17, 'Predovic Group', 'Facere', 'Charlieport', 8, 'tmp//88480300f2c5799d5481cf27452c98be.jpg');
+INSERT INTO `related` (`id`, `name`, `cuisine`, `location`, `reviews`, `image`) VALUES (18, 'Koelpin LLC', 'Quisima', 'Roselynfurt', 5, 'tmp//c99a9393352db288f70eab1c2d6c32c1.jpg');
+INSERT INTO `related` (`id`, `name`, `cuisine`, `location`, `reviews`, `image`) VALUES (19, 'Cummings and Sons', 'Namjoon', 'Lake Lavern', 6, 'tmp//356b48dd049feb5cf4ed4f4a189a7807.jpg');
+INSERT INTO `related` (`id`, `name`, `cuisine`, `location`, `reviews`, `image`) VALUES (20, 'Torp-Auer', 'Praesentium', 'Port Cleoton', 4, 'tmp//3c85bd95b495caad8707b7f49ad957cb.jpg');
+INSERT INTO `related` (`id`, `name`, `cuisine`, `location`, `reviews`, `image`) VALUES (21, 'Marvin, Kuhic and Wiegand', 'Nisivila', 'New Adeline', 2, 'tmp//5ab1945bc42d4e860eee4043c8d0bbe7.jpg');
+INSERT INTO `related` (`id`, `name`, `cuisine`, `location`, `reviews`, `image`) VALUES (22, 'O\'Reilly-Wilkinson', 'nulla', 'Juvenalview', 5, 'tmp//2bbf8263e237da4abb75ad12e362fa0e.jpg');
+INSERT INTO `related` (`id`, `name`, `cuisine`, `location`, `reviews`, `image`) VALUES (23, 'Veum, Halvorson and Batz', 'nihil', 'Lylaside', 4, 'tmp//042fc8b2d711ab86dba8c0ee480544e9.jpg');
+INSERT INTO `related` (`id`, `name`, `cuisine`, `location`, `reviews`, `image`) VALUES (24, 'Schimmel, Pollich and Mayer', 'officia', 'West Estastad', 6, 'tmp//9626bcbb4bbe961ab5385baa70b60128.jpg');
+INSERT INTO `related` (`id`, `name`, `cuisine`, `location`, `reviews`, `image`) VALUES (25, 'Frami, Collins and Treutel', 'quidem', 'West Israel', 7, 'tmp//0203930eac47812422a556110cdc8bdb.jpg');
+
+
+
+
 INSERT INTO `menu_items` (`id`, `dish_name`, `dish_description`, `single_menu_id`) VALUES (1, 'Hic', 'Adipisci accusantium voluptatem sit voluptates.', 1);
 INSERT INTO `menu_items` (`id`, `dish_name`, `dish_description`, `single_menu_id`) VALUES (2, 'Numquam', 'Qui nemo tenetur quia vel sed corrupti sit.', 2);
 INSERT INTO `menu_items` (`id`, `dish_name`, `dish_description`, `single_menu_id`) VALUES (3, 'Provident', 'Aspernatur reiciendis voluptates voluptatem quasi.', 3);
