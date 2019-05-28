@@ -1,6 +1,5 @@
 import React from 'react';
 import MenuTypeContainer from './menuTypeContainer.jsx';
-import $ from 'jquery';
 
 // This holds the menu which will expand or collapse and fade out
 class MenuContainer extends React.Component {
@@ -18,16 +17,11 @@ class MenuContainer extends React.Component {
     const newExpanded = !this.state.expanded;
     const newShowGradient = !this.state.showGradient;
     const switchExpandState = this.switchExpandState.bind(this, newExpanded);
+    
     this.setState({
       showGradient: newShowGradient,
     }, () => {
-      if (!newExpanded) {
-        $(document).ready(function () {
-          $('html, body').animate({scrollTop: $('#menu').offset().top}, 'slow', switchExpandState);
-        });
-      } else {
-        switchExpandState();
-      }
+      switchExpandState();
     });
   }
 
@@ -76,6 +70,7 @@ class MenuContainer extends React.Component {
         bottom: '0px',
         backgroundImage: '-webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0)), to(rgba(255, 255, 255, 1)), color-stop(0.7,#fff))',
         display: this.state.showGradient ? 'block' : 'none',
+        transitionDuration: '2s'
       },
       button: {
         fontFamily: 'Brandon, Lato,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol',
