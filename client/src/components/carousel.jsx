@@ -69,6 +69,11 @@ class Carousel extends React.Component {
   }
 
   render() {
+    // got rid of having empty array on first render for singleBox props
+    if (this.state.information.length === 0) {
+      return null;
+    }
+
     const styles = {
       base: {
         fontFamily: 'Brandon-Bold, Lato,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol',
@@ -77,25 +82,26 @@ class Carousel extends React.Component {
         lineHeight: '32px',
         color: '#2d333f',
         borderBottom: '1px solid #d8d9db',
-        paddingBottom: '16px',
+        paddingBottom: '36px',
         paddingTop: '36px',
         margin: '0 0 0 0',
         display: 'flex',
         justifyContent: 'space-between'
       },
       buttonNext: {
+        alignItems: 'center',
+        justifyContent: 'center',
         height: '48px',
         paddingBottom: '32px',
+        marginTop: '32px',
         padding: '16px',
-        border: '1px solid #d8d9db',
-        textDecoration: 'none',
+        order: '1px solid #d8d9db',
         fontSize: '16px',
         lineHeight: '1rem',
         width: '18rem',
         fontWeight: 500,
         borderRadius: '2px',
         color: '#2d333f',
-        display: 'inline-block',
         boxSizing: 'border-box',
         backgroundColor: '#fff',
         cursor: 'pointer',
@@ -105,31 +111,31 @@ class Carousel extends React.Component {
         boxShadow: 'rgba(51,51,51,.2) 0 2px 4px',
         margin: '0 auto 32px auto',
         left: '50%',
-
       }
     };
   
     // get current image index
     const index = this.state.currentImageIndex;
-    // create a new array with 3 images from the source images
-    let firstThreeVideo = this.state.images.slice(index, index + 2);
-    // check the length of the new array (it’s less than 3 when index is near the end of the array)
-    if (firstThreeVideo.length < 2) {
-    // if the firstThreeVideo's length is lower than 3 images than append missing images from the beginning of the original array 
-      firstThreeVideo = firstThreeVideo.concat(this.state.images.slice(0, 2 - firstThreeVideo.length));
+    // create a new array with 1 images from the source images
+    let firstThreeRes = this.state.images.slice(index, index + 1);
+    // check the length of the new array (it’s less than 1 when index is near the end of the array)
+    if (firstThreeRes.length < 1) {
+    // if the firstThreeRes's length is lower than 1 images than append missing images from the beginning of the original array 
+      firstThreeRes = firstThreeRes.concat(this.state.images.slice(0, 1 - firstThreeRes.length));
     }
+
  
     return (
       <div className='restaurantContainer' style={{width: '640px', marginLeft: 'auto', marginRight: 'auto'}}>
         <div style={styles.base}>Related Restaurants</div>
-        <div style={{paddingTop: '36px', paddingBottom: '36px'}}> 
-          {firstThreeVideo.map((image, index) =>
-            <img key={index} src={image} alt="" width= '360px' height= '360px' transition= 'transform .5s, filter 1.5s ease-in-out' transform= 'scale(1.1)'/>
-          )} 
+        <div className='nextSlide' style={{paddingTop: '36px', paddingBottom: '36px'}}> 
+          {firstThreeRes.map((image, index) =>
+            <img key={index} src={image} alt="" width= '360px' height= '360px'/>
+          )}
           <SingleBox info={this.state.information}/>
-          <button style={styles.buttonNext} onClick={this.nextSlide} onMouseEnter={this.mouseEnterButton.bind(this)} 
+          <button style={styles.buttonNext} onClick={this.nextSlide} onMouseEnter={this.mouseEnterButton.bind(this) } 
             onMouseLeave={this.mouseExitButton.bind(this)} >
-           Next Related Restaurants
+           Next Related Restaurant
           </button>
         </div>
       </div>
