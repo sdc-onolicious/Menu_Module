@@ -1,10 +1,9 @@
 import React from 'react';
 import axios from 'axios';
 import SingleBox from './singleBox.jsx';
-// import rightArrow from '../../dist/photos/right-arrow-circular-button.svg';
-// import leftArrow from '../../dist/photos/back-arrow-circular-symbol.svg';
 
-console.log('hello from carousel');
+
+// console.log('hello from carousel');
 class Carousel extends React.Component {
   constructor(props) {
     super(props);
@@ -29,11 +28,11 @@ class Carousel extends React.Component {
   }
 
   componentDidMount() {
-    console.log('Carousel working!!');
+    // console.log('Carousel working!!');
     axios.get('http://localhost:3040/relatedR')
     //on success
       .then((data) => {
-        console.log('THIS IS CAROUSEL:', data.data);
+        // console.log('THIS IS CAROUSEL:', data.data);
         this.setState({
           information: data.data
         });

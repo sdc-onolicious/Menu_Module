@@ -36,7 +36,7 @@ const MenuItem = (props) => {
   };
   
   
-  console.log('THIS IS PROPS FROM MENUITEMS:', props.item.price_per_guest);
+  // console.log('THIS IS PROPS FROM MENUITEMS:', props.item.price_per_guest);
   
   // console.log(priceArray);
   // console.log(props.item.price_per_guest);
