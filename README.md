@@ -1,12 +1,18 @@
 # SDC
 
 ## CRUD OPERATIONS
-- Create:
-  - endpoint:
-  - purpose :
-- Update
+- ### Create:
+  - endpoint: /addToMenu;
+  - purpose: Allows user to add a resturant and a corresponding menu;
+- ### Update
+   - endpoint: /UpdateMenu;
+   - purpose: Allows user to add a resturant and a corresponding menu;
 - Read
+  - endpoint: /getMenu;
+  - purpose: Allows user to add a resturant and a corresponding menu;
 - Delete
+  - endpoint: /deleteMenu;
+  - purpose: Allows user to add a resturant and a corresponding menu;
 
 # FEC
 
