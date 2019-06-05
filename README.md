@@ -2,17 +2,17 @@
 
 ## CRUD OPERATIONS
 - ### Create:
-  - endpoint: /addToMenu;
-  - purpose: Allows user to add a resturant and a corresponding menu;
+  - endpoint: `/addToMenu`
+  - purpose: Allows user to add a restaurant and its corresponding menu;
 - ### Update
-   - endpoint: /UpdateMenu;
-   - purpose: Allows user to add a resturant and a corresponding menu;
+   - endpoint: `/UpdateMenu`
+   - purpose: Allows user to update a restaurants menu;
 - Read
-  - endpoint: /getMenu;
-  - purpose: Allows user to add a resturant and a corresponding menu;
+  - endpoint: `/getMenu`
+  - purpose: Allows user to see a resturant and its corresponding menu;
 - Delete
-  - endpoint: /deleteMenu;
-  - purpose: Allows user to add a resturant and a corresponding menu;
+  - endpoint: `/deleteMenu`
+  - purpose: Allows user to delete a resturant and its corresponding menu;
 
 # FEC
 
