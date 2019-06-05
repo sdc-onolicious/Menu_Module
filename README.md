@@ -1,9 +1,14 @@
+# SDC
+
+## CRUD OPERATIONS
+- Create:
+  - endpoint:
+  - purpose :
+- Update
+- Read
+- Delete
+
 # FEC
-
-<<<<<<< HEAD
-> FEC based on the website OpenTable
-=======
-
 
 ## Related Projects
 
