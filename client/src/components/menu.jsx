@@ -18,12 +18,10 @@ class Menu extends Component {
  
   // Client get route for menu
   componentDidMount() {
-    // console.log('DATA!!!!');
     axios.get('http://localhost:3040/menu')
       // on success
       .then((data) => {
         // update the state with the returned data from the server
-        // console.log('DATA!!!!', data.data);
         this.setState({
           menu: data.data,
           restaurantLoaded: true,
