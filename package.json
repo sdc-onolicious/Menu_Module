@@ -9,20 +9,23 @@
   },
   "scripts": {
     "react-dev": "webpack -d --watch",
-    "server-dev": "nodemon server/index.js",
+    "start": "nodemon server/index.js",
     "seed": "mysql -u root < schema.sql",
     "test": "./node_modules/.bin/jest",
-    "start": "node server/index.js",
-    "build": "webpack -d"
+    "build": "webpack -p"
   },
   "dependencies": {
-    "eslint-config-airbnb": "^17.1.0",
     "body-parser": "^1.19.0",
+    "eslint-config-airbnb": "^17.1.0",
     "express": "^4.16.4",
     "faker": "^4.1.0",
+    "firstline": "^2.0.2",
     "jest-cli": "^24.8.0",
+    "pg": "^7.11.0",
+    "pg-format": "^1.0.4",
     "react": "^16.8.6",
-    "react-dom": "^16.8.6"
+    "react-dom": "^16.8.6",
+    "twilio": "^3.31.1"
   },
   "devDependencies": {
     "axios": "^0.18.0",
@@ -33,8 +36,6 @@
     "babel-preset-react": "^6.23.0",
     "body-parser": "^1.19.0",
     "cors": "^2.8.5",
-    "enzyme": "^3.9.0",
-    "enzyme-adapter-react-16": "^1.13.1",
     "eslint": "^5.16.0",
     "eslint-config-airbnb": "^17.1.0",
     "eslint-config-hackreactor": "git://github.com/reactorcore/eslint-config-hackreactor",
@@ -45,8 +46,6 @@
     "jquery": "^3.4.1",
     "mysql": "^2.16.0",
     "nodemon": "^1.19.0",
-    "puppeteer": "^1.16.0",
-    "supertest": "^4.0.2",
     "webpack": "^2.2.1"
   }
 }
